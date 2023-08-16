@@ -1,0 +1,23 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/securesult/node_modules
+/securesult/.pnp
+securesult/.pnp.js
+
+# testing
+/securesult/coverage
+
+# production
+/securesult/build
+
+# misc
+/securesult/.DS_Store
+/securesult/.env.local
+/securesult/.env.development.local
+/securesult/.env.test.local
+/securesult/.env.production.local
+
+/securesult/npm-debug.log*
+/securesult/yarn-debug.log*
+/securesult/yarn-error.log*

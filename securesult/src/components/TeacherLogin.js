@@ -1,7 +1,7 @@
 import React from "react";
 
 const TeacherLogin = () => {
-  return <div></div>;
+  return <div>teacher login </div>;
 };
 
 export default TeacherLogin;

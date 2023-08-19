@@ -2,6 +2,7 @@
 
 # dependencies
 /securesult/node_modules
+/login-page/node_modules
 /securesult/.pnp
 securesult/.pnp.js
 

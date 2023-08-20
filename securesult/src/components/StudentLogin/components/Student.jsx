@@ -14,10 +14,10 @@ import {
   Form,
   Input,
   Anchor,
-  Button
+  Button,
 } from "./StyleComponents";
 
-function App() {
+function Student() {
   const [signIn, toggle] = React.useState(true);
   return (
     <Container>
@@ -46,7 +46,7 @@ function App() {
           </LeftOverlayPanel>
 
           <RightOverlayPanel signinIn={signIn}>
-            <Title>Hello, Friend!</Title>
+            <Title>Hello, Student!</Title>
             <Paragraph>
               Enter Your personal details and start journey with us
             </Paragraph>
@@ -58,4 +58,4 @@ function App() {
   );
 }
 
-export default App;
+export default Student;

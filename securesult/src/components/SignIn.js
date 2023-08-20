@@ -1,7 +1,7 @@
 import React from "react";
-
+import Loginindex from "./signin-signup-component/Loginindex"
 const SignIn = () => {
-  return <div></div>;
+  return <Loginindex/>;
 };
 
 export default SignIn;

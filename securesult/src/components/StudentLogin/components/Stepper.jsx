@@ -5,7 +5,6 @@ import Step from "@mui/material/Step";
 import StepButton from "@mui/material/StepButton";
 // import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
-
 import Personal from "./RegdFormPages/Personal";
 import Address from "./RegdFormPages/Address";
 import RegdInfo from "./RegdFormPages/RegdInfo";

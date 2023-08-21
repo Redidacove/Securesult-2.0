@@ -6,7 +6,12 @@ import StepLabel from "@mui/material/StepLabel";
 import Personal from "./RegdFormPages/Personal";
 import Address from "./RegdFormPages/Address";
 import RegdInfo from "./RegdFormPages/RegdInfo";
+<<<<<<< HEAD
 import { Button, Title } from "./StyleComponents";
+=======
+import { Button2, Title } from "./StyleComponents";
+import { Link } from "react-router-dom";
+>>>>>>> 633057ce062f2a59ce6141b1e35c7b74428e6a3c
 
 const steps = ["", "", ""];
 
@@ -79,6 +84,7 @@ export default function HorizontalStepper() {
           );
         })}
       </Stepper>
+<<<<<<< HEAD
       {/* {activeStep === steps.length ? null : ( */}
       <React.Fragment>
         {PageDisplay()}
@@ -104,6 +110,66 @@ export default function HorizontalStepper() {
         </Box>
       </React.Fragment>
       {/* )} */}
+=======
+      <div>
+        {allStepsCompleted() ? (
+          <React.Fragment>
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "row",
+                justifyContent: "center",
+                mt: 30,
+                padding: "20px 50px 0px 50px",
+              }}
+            >
+              {/* <Box sx={{ flex: "1 1 auto" }} /> */}
+              <Button2 onClick={handleReset} color="inherit" sx={{ mr: 2 }}>
+                Reset
+              </Button2>
+              <Box sx={{ flex: "1 1 auto" }} />
+              <Link to="/dashboard">
+                <Button2 onClick={SubmitForm}>Submit</Button2>{" "}
+              </Link>
+            </Box>
+          </React.Fragment>
+        ) : (
+          <React.Fragment>
+            {activeStep === 0 && <Personal />}
+            {activeStep === 1 && <Address />}
+            {activeStep === 2 && <RegdInfo />}
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "row",
+                padding: "20px 50px 0px 50px",
+              }}
+            >
+              <Button2
+                color="inherit"
+                disabled={activeStep === 0}
+                onClick={handleBack}
+                sx={{ mr: 1 }}
+              >
+                Back
+              </Button2>
+              <Box sx={{ flex: "1 1 auto" }} />
+              {activeStep !== steps.length &&
+                (completed[activeStep] ? (
+                  <Typography
+                    variant="caption"
+                    sx={{ display: "inline-block" }}
+                  ></Typography>
+                ) : (
+                  <Button2 onClick={handleComplete}>
+                    {completedSteps() === totalSteps() - 1 ? "Finish" : "Next"}
+                  </Button2>
+                ))}
+            </Box>
+          </React.Fragment>
+        )}
+      </div>
+>>>>>>> 633057ce062f2a59ce6141b1e35c7b74428e6a3c
     </Box>
   );
 }

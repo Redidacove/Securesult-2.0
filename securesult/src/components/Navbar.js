@@ -1,6 +1,27 @@
 import React from "react";
 
 const Navbar = () => {
+  const connectWallet = async () => {
+    try {
+      if (window.ethereum) {
+        const accounts = await window.ethereum.request({
+          method: "eth_requestAccounts",
+        });
+        window.ethereum.on("chainChanged", () => {
+          window.location.reload();
+        });
+
+        window.ethereum.on("accountsChanged", () => {
+          window.location.reload();
+        });
+      } else {
+        alert("Install Metamask");
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   return (
     <div className="flex flex-col justify-between bg-orange-500 w-52 h-screen text-white py-8 px-4 shadow-lg rounded-r-xl text-lg">
       <div>
@@ -17,7 +38,8 @@ const Navbar = () => {
             <i className="fa-solid fa-table-list mr-2"></i>DashBoard
           </li>
           <li className="hover:text-amber-950">
-            <i className="fa-solid fa-wallet mr-2"></i>Connect Wallet
+            <i className="fa-solid fa-wallet mr-2"></i>
+            <button onClick={connectWallet}>Connect Wallet</button>
           </li>
         </ul>
       </div>

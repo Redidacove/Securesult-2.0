@@ -6,12 +6,8 @@ import StepLabel from "@mui/material/StepLabel";
 import Personal from "./RegdFormPages/Personal";
 import Address from "./RegdFormPages/Address";
 import RegdInfo from "./RegdFormPages/RegdInfo";
-<<<<<<< HEAD
-import { Button, Title } from "./StyleComponents";
-=======
 import { Button2, Title } from "./StyleComponents";
 import { Link } from "react-router-dom";
->>>>>>> 633057ce062f2a59ce6141b1e35c7b74428e6a3c
 
 const steps = ["", "", ""];
 
@@ -84,33 +80,6 @@ export default function HorizontalStepper() {
           );
         })}
       </Stepper>
-<<<<<<< HEAD
-      {/* {activeStep === steps.length ? null : ( */}
-      <React.Fragment>
-        {PageDisplay()}
-        <Box
-          sx={{
-            display: "flex",
-            flexDirection: "row",
-            padding: "20px 50px 0px 50px",
-          }}
-        >
-          <Button
-            color="inherit"
-            disabled={activeStep === 0}
-            onClick={handleBack}
-            sx={{ mr: 1 }}
-          >
-            Back
-          </Button>
-          <Box sx={{ flex: "1 1 auto" }} />
-          <Button onClick={handleNext}>
-            {activeStep === steps.length - 1 ? "Submit" : "Next"}
-          </Button>
-        </Box>
-      </React.Fragment>
-      {/* )} */}
-=======
       <div>
         {allStepsCompleted() ? (
           <React.Fragment>
@@ -169,7 +138,6 @@ export default function HorizontalStepper() {
           </React.Fragment>
         )}
       </div>
->>>>>>> 633057ce062f2a59ce6141b1e35c7b74428e6a3c
     </Box>
   );
 }

@@ -1,5 +1,6 @@
 import React from "react";
 import Steps from "./Stepper";
+import { Link } from "react-router-dom";
 import {
   Container,
   RegisterContainer,
@@ -31,7 +32,9 @@ function Student() {
           <Input type="email" placeholder="Email" />
           <Input type="password" placeholder="Password" />
           <Anchor href="#">Forgot your password?</Anchor>
-          <Button>Sigin In</Button>
+          <Link to="/dashboard">
+            <Button>Sigin In</Button>
+          </Link>
         </Form>
       </LoginContainer>
 

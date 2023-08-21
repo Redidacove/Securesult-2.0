@@ -132,25 +132,6 @@ export const Button = styled.button`
   }
 `;
 
-export const Button2 = styled.button`
-  border-radius: 20px;
-  border: 1px solid #ff4b2b;
-  background-color: #ff4b2b;
-  color: #ffffff;
-  font-size: 12px;
-  font-weight: bold;
-  padding: 12px 30px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  transition: transform 80ms ease-in;
-  &:active {
-    transform: scale(0.95);
-  }
-  &:focus {
-    outline: none;
-  }
-`;
-
 export const Anchor = styled.a`
   color: #333;
   font-size: 14px;
@@ -159,6 +140,18 @@ export const Anchor = styled.a`
 `;
 
 export const Form = styled.form`
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 50px;
+  margin-top: 20px;
+  height: 100%;
+  text-align: center;
+`;
+
+export const FormDiv = styled.div`
   background-color: #ffffff;
   display: flex;
   align-items: center;

@@ -6,6 +6,7 @@ const DashBoard = () => {
   return (
     <div className="flex">
       <Navbar />
+      
       <ResultContainer />
     </div>
   );

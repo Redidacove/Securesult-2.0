@@ -39,7 +39,7 @@ function Student() {
       </RegisterContainer>
 
       <LoginContainer signinIn={signIn}>
-        <Form action="/dashboard" method="GET">
+        <Form>
           <Title>Sign in</Title>
           <Input
             type="email"
@@ -65,13 +65,9 @@ function Student() {
             required
           />
           <Anchor href="#">Forgot your password?</Anchor>
-<<<<<<< HEAD
-          <Button onClick={handleSubmitForm}>Sigin In</Button>
-=======
           <Link to="/dashboard">
             <Button>Sigin In</Button>
           </Link>
->>>>>>> 633057ce062f2a59ce6141b1e35c7b74428e6a3c
         </Form>
       </LoginContainer>
 

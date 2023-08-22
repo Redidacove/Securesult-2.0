@@ -7,6 +7,7 @@ import Personal from "./RegdFormPages/Personal";
 import Address from "./RegdFormPages/Address";
 import RegdInfo from "./RegdFormPages/RegdInfo";
 import { Button, Title } from "./StyleComponents";
+import { Link } from "react-router-dom";
 
 const steps = ["", "", ""];
 
@@ -97,7 +98,11 @@ export default function HorizontalStepper() {
           </Button>
           <Box sx={{ flex: "1 1 auto" }} />
           <Button onClick={handleNext}>
-            {activeStep === steps.length - 1 ? "Submit" : "Next"}
+            {activeStep === steps.length - 1 ? (
+              <Link to="/dashboard">"Submit"</Link>
+            ) : (
+              "Next"
+            )}
           </Button>
         </Box>
       </React.Fragment>

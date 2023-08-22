@@ -1,15 +1,28 @@
-import { Input, Form } from "../StyleComponents";
-// import { handleNext } from "../Stepper";
+import { Input, FormDiv } from "../StyleComponents";
 
-function RegdInfo() {
+function RegdInfo({ formData, setFormData }) {
   return (
-    <Form>
+    <FormDiv>
       <h3>Registration Details</h3>
-      <Input type="text" placeholder="ID no." />
-      <Input type="text" placeholder="Regd. no" />
-      
-      {/* <Button>Next</Button> */}
-    </Form>
+      <Input
+        type="text"
+        name="id"
+        value={formData.id}
+        onChange={(e) => {
+          setFormData({ ...formData, id: e.target.value });
+        }}
+        placeholder="ID no."
+      />
+      <Input
+        type="text"
+        name="regdno"
+        value={formData.regdno}
+        onChange={(e) => {
+          setFormData({ ...formData, regdno: e.target.value });
+        }}
+        placeholder="Regd. no"
+      />
+    </FormDiv>
   );
 }
 

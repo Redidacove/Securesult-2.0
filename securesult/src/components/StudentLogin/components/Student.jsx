@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import Steps from "./Stepper";
+import { Link } from "react-router-dom";
 import {
   Container,
   RegisterContainer,
@@ -18,7 +19,19 @@ import {
 } from "./StyleComponents";
 
 function Student() {
-  const [signIn, toggle] = React.useState(true);
+  const [signIn, toggle] = useState(true);
+  const [signinFormData, setSigninFormData] = React.useState({
+    email: "",
+    password: "",
+  });
+
+  const handleSubmitForm = () => {
+    if (signinFormData.email !== "" && signinFormData.password !== "") {
+      console.log("Login Data submitted!");
+      console.log(signinFormData);
+    }
+  };
+
   return (
     <Container>
       <RegisterContainer signinIn={signIn}>
@@ -26,12 +39,39 @@ function Student() {
       </RegisterContainer>
 
       <LoginContainer signinIn={signIn}>
-        <Form>
+        <Form action="/dashboard" method="GET">
           <Title>Sign in</Title>
-          <Input type="email" placeholder="Email" />
-          <Input type="password" placeholder="Password" />
+          <Input
+            type="email"
+            name="email"
+            value={signinFormData.email}
+            onChange={(e) => {
+              setSigninFormData({ ...signinFormData, email: e.target.value });
+            }}
+            placeholder="Email"
+            required
+          />
+          <Input
+            type="password"
+            name="password"
+            value={signinFormData.password}
+            onChange={(e) => {
+              setSigninFormData({
+                ...signinFormData,
+                password: e.target.value,
+              });
+            }}
+            placeholder="Password"
+            required
+          />
           <Anchor href="#">Forgot your password?</Anchor>
-          <Button>Sigin In</Button>
+<<<<<<< HEAD
+          <Button onClick={handleSubmitForm}>Sigin In</Button>
+=======
+          <Link to="/dashboard">
+            <Button>Sigin In</Button>
+          </Link>
+>>>>>>> 633057ce062f2a59ce6141b1e35c7b74428e6a3c
         </Form>
       </LoginContainer>
 

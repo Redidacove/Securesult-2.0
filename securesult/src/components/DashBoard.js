@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from "./Navbar";
 import ResultContainer from "./ResultContainer";
+import "../../src/index.css";
 
 const DashBoard = () => {
   return (

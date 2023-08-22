@@ -66,7 +66,7 @@ function Student() {
           />
           <Anchor href="#">Forgot your password?</Anchor>
           <Link to="/dashboard">
-            <Button>Sigin In</Button>
+            <Button onClick={handleSubmitForm}>Sigin In</Button>
           </Link>
         </Form>
       </LoginContainer>

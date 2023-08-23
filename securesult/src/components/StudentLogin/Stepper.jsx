@@ -7,6 +7,7 @@ import Personal from "./RegdFormPages/Personal";
 import Address from "./RegdFormPages/Address";
 import RegdInfo from "./RegdFormPages/RegdInfo";
 import { Button, Title } from "./StyleComponents";
+import { Link } from "react-router-dom";
 
 const steps = ["", "", ""];
 
@@ -19,8 +20,10 @@ const initialData = {
   state: "",
   country: "",
   pincode: "",
-  id: "",
+  rollno: "",
   regdno: "",
+  year: "",
+  sem: "",
 };
 
 export default function HorizontalStepper() {
@@ -61,11 +64,11 @@ export default function HorizontalStepper() {
   };
 
   return (
-    <Box sx={{ width: "100%", paddingTop: "40px" }}>
+    <Box sx={{ width: "100%", paddingTop: "30px" }}>
       <Title>Create Account</Title>
       <Stepper
         activeStep={activeStep}
-        sx={{ width: "100%", padding: "50px 50px 0px 50px" }}
+        sx={{ width: "100%", padding: "30px 50px 0px 50px" }}
       >
         {steps.map((label, index) => {
           const stepProps = {};
@@ -77,7 +80,6 @@ export default function HorizontalStepper() {
           );
         })}
       </Stepper>
-      {/* {activeStep === steps.length ? null : ( */}
       <React.Fragment>
         {PageDisplay()}
         <Box
@@ -97,11 +99,14 @@ export default function HorizontalStepper() {
           </Button>
           <Box sx={{ flex: "1 1 auto" }} />
           <Button onClick={handleNext}>
-            {activeStep === steps.length - 1 ? "Submit" : "Next"}
+            {activeStep === steps.length - 1 ? (
+              <Link to="/dashboard">"Submit"</Link>
+            ) : (
+              "Next"
+            )}
           </Button>
         </Box>
       </React.Fragment>
-      {/* )} */}
     </Box>
   );
 }

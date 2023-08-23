@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import React, { useState } from "react";
 import Steps from "./Stepper";
 import {
@@ -64,7 +65,9 @@ function Teacher() {
             required
           />
           <Anchor href="#">Forgot your password?</Anchor>
-          <Button onClick={handleSubmitForm}>Sigin In</Button>
+          <Link to="/dashboard">
+            <Button onClick={handleSubmitForm}>Sign In</Button>{" "}
+          </Link>
         </Form>
       </LoginContainer>
 

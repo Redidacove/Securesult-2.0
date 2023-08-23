@@ -65,7 +65,7 @@ function Teacher() {
             required
           />
           <Anchor href="#">Forgot your password?</Anchor>
-          <Link to="/dashboard">
+          <Link to="/dashboardTeacher">
             <Button onClick={handleSubmitForm}>Sign In</Button>{" "}
           </Link>
         </Form>

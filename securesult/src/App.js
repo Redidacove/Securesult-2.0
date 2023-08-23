@@ -1,7 +1,8 @@
 import "./App.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import StartPage from "./components/StartPage";
-import DashBoard from "./components/DashBoard";
+import DashBoardStudent from "./components/DashBoardStudent";
+import DashBoardTeacher from "./components/DashBoardTeacher";
 import Student from "./components/StudentLogin/components/Student";
 import Teacher from "./components/TeacherLogin/components/Teacher";
 
@@ -19,8 +20,12 @@ const appRouter = createBrowserRouter([
     element: <Teacher />,
   },
   {
-    path: "dashboard",
-    element: <DashBoard />,
+    path: "dashboardStudent",
+    element: <DashBoardStudent />,
+  },
+  {
+    path: "dashboardTeacher",
+    element: <DashBoardTeacher />,
   },
 ]);
 

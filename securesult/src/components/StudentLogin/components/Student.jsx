@@ -65,7 +65,7 @@ function Student() {
             required
           />
           <Anchor href="#">Forgot your password?</Anchor>
-          <Link to="/dashboard">
+          <Link to="/dashboardStudent">
             <Button>Sigin In</Button>
           </Link>
         </Form>

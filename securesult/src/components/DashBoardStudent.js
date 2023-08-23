@@ -3,7 +3,7 @@ import Navbar from "./Navbar";
 import ResultContainer from "./ResultContainer";
 import "../../src/index.css";
 
-const DashBoard = () => {
+const DashBoardStudent = () => {
   return (
     <div className="flex flex-row m-0">
       <Navbar />
@@ -12,4 +12,4 @@ const DashBoard = () => {
   );
 };
 
-export default DashBoard;
+export default DashBoardStudent;

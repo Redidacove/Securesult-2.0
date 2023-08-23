@@ -2,8 +2,8 @@ import "./App.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import StartPage from "./components/StartPage";
 import DashBoard from "./components/DashBoard";
-import Student from "./components/StudentLogin/components/Student";
-import Teacher from "./components/TeacherLogin/components/Teacher";
+import Student from "./components/StudentLogin/Student";
+import Teacher from "./components/TeacherLogin/Teacher";
 
 const appRouter = createBrowserRouter([
   {

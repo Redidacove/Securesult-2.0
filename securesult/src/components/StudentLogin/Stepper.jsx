@@ -20,8 +20,10 @@ const initialData = {
   state: "",
   country: "",
   pincode: "",
-  id: "",
+  rollno: "",
   regdno: "",
+  year: "",
+  sem: "",
 };
 
 export default function HorizontalStepper() {
@@ -62,11 +64,11 @@ export default function HorizontalStepper() {
   };
 
   return (
-    <Box sx={{ width: "100%", paddingTop: "40px" }}>
+    <Box sx={{ width: "100%", paddingTop: "30px" }}>
       <Title>Create Account</Title>
       <Stepper
         activeStep={activeStep}
-        sx={{ width: "100%", padding: "50px 50px 0px 50px" }}
+        sx={{ width: "100%", padding: "30px 50px 0px 50px" }}
       >
         {steps.map((label, index) => {
           const stepProps = {};
@@ -78,7 +80,6 @@ export default function HorizontalStepper() {
           );
         })}
       </Stepper>
-      {/* {activeStep === steps.length ? null : ( */}
       <React.Fragment>
         {PageDisplay()}
         <Box
@@ -106,7 +107,6 @@ export default function HorizontalStepper() {
           </Button>
         </Box>
       </React.Fragment>
-      {/* )} */}
     </Box>
   );
 }

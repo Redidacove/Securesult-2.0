@@ -3,7 +3,7 @@ import { Input, FormDiv } from "../StyleComponents";
 function Address({ formData, setFormData }) {
   return (
     <FormDiv>
-      <h3>Address details</h3>
+      <h1>Address details</h1>
       <Input
         type="text"
         name="address"

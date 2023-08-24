@@ -96,13 +96,13 @@ export default function HorizontalStepper() {
             Back
           </Button>
           <Box sx={{ flex: "1 1 auto" }} />
-          <Button onClick={handleNext}>
-            {activeStep === steps.length - 1 ? (
-              <Link to="/dashboardTeacher">"Submit"</Link>
-            ) : (
-              "Next"
-            )}
-          </Button>
+          {activeStep === steps.length - 1 ? (
+            <Link to="/dashboardTeacher">
+              <Button onClick={handleNext}>Submit</Button>
+            </Link>
+          ) : (
+            <Button onClick={handleNext}>Next</Button>
+          )}
         </Box>
       </React.Fragment>
     </Box>

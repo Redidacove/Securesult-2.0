@@ -24,21 +24,21 @@ function RegdInfo({ formData, setFormData }) {
       />
       <Input
         type="text"
-        name="year"
-        value={formData.year}
+        name="class"
+        value={formData.class}
         onChange={(e) => {
-          setFormData({ ...formData, year: e.target.value });
+          setFormData({ ...formData, class: e.target.value });
         }}
-        placeholder="Year"
+        placeholder="Class"
       />
       <Input
         type="text"
-        name="sem"
-        value={formData.sem}
+        name="sec"
+        value={formData.sec}
         onChange={(e) => {
-          setFormData({ ...formData, sem: e.target.value });
+          setFormData({ ...formData, sec: e.target.value });
         }}
-        placeholder="Semester"
+        placeholder="Section"
       />
     </FormDiv>
   );

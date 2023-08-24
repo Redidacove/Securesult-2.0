@@ -100,7 +100,7 @@ export default function HorizontalStepper() {
           <Box sx={{ flex: "1 1 auto" }} />
           <Button onClick={handleNext}>
             {activeStep === steps.length - 1 ? (
-              <Link to="/dashboard">"Submit"</Link>
+              <Link to="/dashboardStudent">"Submit"</Link>
             ) : (
               "Next"
             )}

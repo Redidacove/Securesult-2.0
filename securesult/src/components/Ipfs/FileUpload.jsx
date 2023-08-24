@@ -8,7 +8,7 @@ const FileUpload = ({ contract, account, provider }) => {
   const [fileName, setFileName] = useState("No image selected");
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (file){
+    if (file) {
       try {
         const formData = new FormData();
         formData.append("file", file);
@@ -18,14 +18,14 @@ const FileUpload = ({ contract, account, provider }) => {
           url: "https://api.pinata.cloud/pinning/pinFileToIPFS",
           data: formData,
           headers: {
-            pinata_api_key:process.env.REACT_APP_PINATA_API_KEY,
-            pinata_secret_api_key:process.env.REACT_APP_PINATA_API_SECRET,
+            pinata_api_key: process.env.REACT_APP_PINATA_API_KEY,
+            pinata_secret_api_key: process.env.REACT_APP_PINATA_API_SECRET,
             "Content-Type": "multipart/form-data",
           },
         });
-      const ImgHash = `https://gateway.pinata.cloud/ipfs/${resFile.data.IpfsHash}`;
-       setHash(ImgHash);
-        alert("Your Cid is "+ ImgHash);
+        const ImgHash = `https://gateway.pinata.cloud/ipfs/${resFile.data.IpfsHash}`;
+        setHash(ImgHash);
+        alert("Your Cid is " + ImgHash);
         // const signer = contract.connect(provider.getSigner());
         // signer.add(account, ImgHash);
       } catch (e) {
@@ -48,12 +48,12 @@ const FileUpload = ({ contract, account, provider }) => {
       setFile(e.target.files[0]);
     };
 
-    
     setFileName(e.target.files[0].name);
     e.preventDefault();
   };
   return (
     <div className="top">
+      <h1 className="text-2xl font-inter">Upload Results here</h1>
       <form className="form" onSubmit={handleSubmit}>
         <label htmlFor="file-upload" className="choose">
           Choose Image
@@ -70,7 +70,7 @@ const FileUpload = ({ contract, account, provider }) => {
           Upload File
         </button>
       </form>
-    <h2>{hash}</h2>
+      <h2>{hash}</h2>
     </div>
   );
 };

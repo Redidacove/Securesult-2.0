@@ -3,8 +3,8 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import StartPage from "./components/StartPage";
 import DashBoardStudent from "./components/DashBoardStudent";
 import DashBoardTeacher from "./components/DashBoardTeacher";
-import Student from "./components/StudentLogin/components/Student";
-import Teacher from "./components/TeacherLogin/components/Teacher";
+import Student from "./components/StudentLogin/Student";
+import Teacher from "./components/TeacherLogin/Teacher";
 
 const appRouter = createBrowserRouter([
   {

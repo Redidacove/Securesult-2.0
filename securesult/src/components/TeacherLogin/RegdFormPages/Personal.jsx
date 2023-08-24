@@ -3,7 +3,7 @@ import { Input, FormDiv } from "../StyleComponents";
 function Personal({ formData, setFormData }) {
   return (
     <FormDiv>
-      <h3>Personal Details</h3>
+      <h1>Personal Details</h1>
       <Input
         type="text"
         name="name"

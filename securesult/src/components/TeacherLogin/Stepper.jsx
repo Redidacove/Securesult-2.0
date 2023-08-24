@@ -62,11 +62,11 @@ export default function HorizontalStepper() {
   };
 
   return (
-    <Box sx={{ width: "100%", paddingTop: "40px" }}>
+    <Box sx={{ width: "100%", paddingTop: "30px" }}>
       <Title>Create Account</Title>
       <Stepper
         activeStep={activeStep}
-        sx={{ width: "100%", padding: "50px 50px 0px 50px" }}
+        sx={{ width: "100%", padding: "30px 40px 0px 50px" }}
       >
         {steps.map((label, index) => {
           const stepProps = {};
@@ -78,14 +78,13 @@ export default function HorizontalStepper() {
           );
         })}
       </Stepper>
-      {/* {activeStep === steps.length ? null : ( */}
       <React.Fragment>
         {PageDisplay()}
         <Box
           sx={{
             display: "flex",
             flexDirection: "row",
-            padding: "20px 50px 0px 50px",
+            padding: "30px 50px 0px 50px",
           }}
         >
           <Button
@@ -106,7 +105,6 @@ export default function HorizontalStepper() {
           </Button>
         </Box>
       </React.Fragment>
-      {/* )} */}
     </Box>
   );
 }

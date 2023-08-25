@@ -1,5 +1,6 @@
 .top {
   margin: 40px;
+  padding: 5px 10px;
 }
 
 input[type="file"] {
@@ -49,6 +50,6 @@ input[type="file"] {
   color: #666666;
 }
 
-div {
+/* div {
   padding: 5px 10px;
-}
+} */

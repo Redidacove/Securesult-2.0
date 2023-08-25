@@ -32,7 +32,7 @@ function Address({ formData, setFormData }) {
         placeholder="Country"
       />
       <Input
-        type="type"
+        type="text"
         name="pincode"
         value={formData.pincode}
         onChange={(e) => {

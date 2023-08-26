@@ -1,18 +1,19 @@
-import { useState } from "react";
+import { useState} from "react";
 import axios from "axios";
 import "./FileUpload.css";
 
 const FileUpload = ({ contract, account, provider }) => {
+
   const [file, setFile] = useState(null);
   const [hash, setHash] = useState();
   const [fileName, setFileName] = useState("No image selected");
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (file) {
       try {
         const formData = new FormData();
         formData.append("file", file);
-
         const resFile = await axios({
           method: "post",
           url: "https://api.pinata.cloud/pinning/pinFileToIPFS",

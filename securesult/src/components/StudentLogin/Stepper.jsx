@@ -22,8 +22,8 @@ const initialData = {
   pincode: "",
   rollno: "",
   regdno: "",
-  year: "",
-  sem: "",
+  class: "",
+  sec: "",
 };
 
 export default function HorizontalStepper() {
@@ -98,13 +98,13 @@ export default function HorizontalStepper() {
             Back
           </Button>
           <Box sx={{ flex: "1 1 auto" }} />
-          <Button onClick={handleNext}>
-            {activeStep === steps.length - 1 ? (
-              <Link to="/dashboardStudent">"Submit"</Link>
-            ) : (
-              "Next"
-            )}
-          </Button>
+          {activeStep === steps.length - 1 ? (
+            <Link to="/dashboardStudent">
+              <Button onClick={handleNext}>Submit</Button>
+            </Link>
+          ) : (
+            <Button onClick={handleNext}>Next</Button>
+          )}
         </Box>
       </React.Fragment>
     </Box>

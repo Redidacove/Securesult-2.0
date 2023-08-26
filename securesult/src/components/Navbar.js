@@ -14,6 +14,7 @@ const Navbar = () => {
         window.ethereum.on("accountsChanged", () => {
           window.location.reload();
         });
+        console.log(accounts);
       } else {
         alert("Install Metamask");
       }

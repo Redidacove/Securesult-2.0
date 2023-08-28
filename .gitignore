@@ -6,6 +6,7 @@
 /securesult/.pnp
 securesult/.pnp.js
 
+
 # testing
 /securesult/coverage
 
@@ -18,6 +19,7 @@ securesult/.pnp.js
 /securesult/.env.development.local
 /securesult/.env.test.local
 /securesult/.env.production.local
+.env
 
 /securesult/npm-debug.log*
 /securesult/yarn-debug.log*

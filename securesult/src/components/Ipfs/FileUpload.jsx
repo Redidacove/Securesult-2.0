@@ -1,6 +1,7 @@
 import { useState} from "react";
 import axios from "axios";
 import "./FileUpload.css";
+import { Input } from "../StudentLogin/StyleComponents"
 
 const FileUpload = ({ contract, account, provider }) => {
 
@@ -56,6 +57,9 @@ const FileUpload = ({ contract, account, provider }) => {
     <div className="top">
       <h1 className="text-2xl font-inter">Upload Results here</h1>
       <form className="form" onSubmit={handleSubmit}>
+        <Input type="text" name="class" placeholder="Class" />
+        <Input type="text" name="sec" placeholder="Section" />
+        <Input type="text" name="rollno" placeholder="Roll no" />
         <label htmlFor="file-upload" className="choose">
           Choose Image
         </label>
@@ -67,8 +71,9 @@ const FileUpload = ({ contract, account, provider }) => {
           onChange={retrieveFile}
         />
         <span className="textArea">Image: {fileName}</span>
+
         <button type="submit" className="upload" disabled={!file}>
-          Upload File
+          Upload
         </button>
       </form>
       <h2>{hash}</h2>

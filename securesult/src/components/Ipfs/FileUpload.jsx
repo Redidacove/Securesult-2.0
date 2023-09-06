@@ -6,8 +6,22 @@ import { Input } from "../StudentLogin/StyleComponents"
 const FileUpload = ({ contract, account, provider }) => {
 
   const [file, setFile] = useState(null);
+  const [studentData, setStudentData] = useState({
+    class: '',
+    sec: '',
+    rollno: '',
+    result: '',
+  });
   const [hash, setHash] = useState();
   const [fileName, setFileName] = useState("No image selected");
+
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
+    setStudentData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -26,8 +40,24 @@ const FileUpload = ({ contract, account, provider }) => {
           },
         });
         const ImgHash = `https://gateway.pinata.cloud/ipfs/${resFile.data.IpfsHash}`;
+        console.log("Your Cid1 is " + ImgHash);
         setHash(ImgHash);
-        alert("Your Cid is " + ImgHash);
+        // alert("Your Cid is " + ImgHash);
+        const updatedStudentData = { ...studentData, result: ImgHash };
+        console.log("Your data1 is " + JSON.stringify(updatedStudentData));
+
+        const response1 = await fetch('http://localhost:5000/teacher_dashboard', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(updatedStudentData),
+        });
+        if (!response1.ok) {
+          throw new Error('Error sending data to route1');
+        }
+        console.log("done till here");
+
         // const signer = contract.connect(provider.getSigner());
         // signer.add(account, ImgHash);
       } catch (e) {
@@ -57,9 +87,9 @@ const FileUpload = ({ contract, account, provider }) => {
     <div className="top">
       <h1 className="text-2xl font-inter">Upload Results here</h1>
       <form className="form" onSubmit={handleSubmit}>
-        <Input type="text" name="class" placeholder="Class" />
-        <Input type="text" name="sec" placeholder="Section" />
-        <Input type="text" name="rollno" placeholder="Roll no" />
+      <Input type="text" name="class" placeholder="Class" onChange={handleInputChange} />
+        <Input type="text" name="sec" placeholder="Section" onChange={handleInputChange} />
+        <Input type="text" name="rollno" placeholder="Roll no" onChange={handleInputChange} />
         <label htmlFor="file-upload" className="choose">
           Choose Image
         </label>

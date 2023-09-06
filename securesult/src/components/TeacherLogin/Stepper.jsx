@@ -32,7 +32,20 @@ export default function HorizontalStepper() {
     setFormData({ ...initialData });
   };
 
-  const handleSubmitForm = () => {
+  const handleSubmitForm = async () => {
+    try {
+      const response = await fetch('http://localhost:5000/register_teacher', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+  
+      // Handle the response as needed
+    } catch (error) {
+      console.error('Error submitting form:', error);
+    }
     console.log("Form submitted!");
     console.log(formData);
     setActiveStep(0);

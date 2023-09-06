@@ -34,7 +34,34 @@ export default function HorizontalStepper() {
     setFormData({ ...initialData });
   };
 
-  const handleSubmitForm = () => {
+  const handleSubmitForm = async () => {
+    try {
+      const response1 = await fetch('http://localhost:5000/register_student', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+      if (!response1.ok) {
+        throw new Error('Error sending data to route1');
+      }
+  
+      const response2 = await fetch('http://localhost:5000/student_dashboard', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+      if (!response2.ok) {
+        throw new Error('Error sending data to route1');
+      }
+  
+      // Handle the response as needed
+    } catch (error) {
+      console.error('Error submitting form:', error);
+    }
     console.log("Form submitted!");
     console.log(formData);
     setActiveStep(0);

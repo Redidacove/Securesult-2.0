@@ -1,5 +1,5 @@
 import React from "react";
-import { useState ,useEffect} from "react";
+import { useState, useEffect } from "react";
 import "../../src/index.css";
 import Navbar from "./Navbar";
 import { ethers } from "ethers";
@@ -34,7 +34,7 @@ const DashBoardTeacher = () => {
           Upload.abi,
           signer
         );
-        //console.log(contract);
+        console.log(contract);
         setContract(contract);
         setProvider(provider);
       } else {
@@ -48,13 +48,13 @@ const DashBoardTeacher = () => {
     <div className="flex flex-row m-0">
       <Navbar />
       <p style={{ color: "white" }}>
-          Account : {account ? account : "Not connected"}
-        </p>
+        Account : {account ? account : "Not connected"}
+      </p>
       <FileUpload
-          account={account}
-          provider={provider}
-          contract={contract}
-        ></FileUpload>
+        account={account}
+        provider={provider}
+        contract={contract}
+      ></FileUpload>
 
     </div>
   );
